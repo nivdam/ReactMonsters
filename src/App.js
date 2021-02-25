@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { CardsList } from "./components/cards-list/cards-list.components";
+
 import "./styles.css";
 
 class App extends Component {
@@ -27,19 +29,8 @@ class App extends Component {
           {this.state.string} {this.state.num}
         </h2>
 
-        {this.state.monsters.map((monster) => (
-          <div className="cards-items" key={monster.id}>
-            <picture className="image--content">
-              {/* {fetch("https://jsonplaceholder.typicode.com/photos/" + monster.id)
-              .then((response) => response.json())
-              .then((imgUrl) => iamge.url)} */}
-              <img src="" alt="" />
-            </picture>
-            <h2>
-              {monster.name} {this.state.num}
-            </h2>
-          </div>
-        ))}
+        <CardsList monsters={this.state.monsters} num={this.state.num} />
+
         <button
           className="square"
           onClick={() => this.setState({ string: "big", num: 1.1 })}
