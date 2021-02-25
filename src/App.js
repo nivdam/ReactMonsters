@@ -30,6 +30,9 @@ class App extends Component {
         {this.state.monsters.map((monster) => (
           <div className="cards-items" key={monster.id}>
             <picture className="image--content">
+              {/* {fetch("https://jsonplaceholder.typicode.com/photos/" + monster.id)
+              .then((response) => response.json())
+              .then((imgUrl) => iamge.url)} */}
               <img src="" alt="" />
             </picture>
             <h2>
