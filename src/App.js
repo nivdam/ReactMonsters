@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { CardsList } from "./components/cards-list/cards-list.components";
+import { SearchBox } from "./components/search-box/search-box.component";
 
 import "./styles.css";
 
@@ -9,6 +10,7 @@ class App extends Component {
 
     this.state = {
       monsters: [],
+      searchField: "",
       string: "xcv xcv",
       num: 1,
       iamge: "https://jsonplaceholder.typicode.com/photos/",
@@ -23,13 +25,33 @@ class App extends Component {
   }
 
   render() {
+    /* const monsters = this.state.monsters;
+    const searchField = this.state.searchField; */
+    const { monsters, searchField } = this.state;
+
+    const filterMonsters = monsters.filter((monsters) =>
+      monsters.name.toLowerCase().includes(searchField.toLowerCase())
+    );
+
     return (
       <div className="container">
         <h2>
           {this.state.string} {this.state.num}
         </h2>
 
-        <CardsList monsters={this.state.monsters} num={this.state.num} />
+        <header>
+          <SearchBox
+            placeholder="Search monsters"
+            handleChange={(e) => {
+              this.setState({ searchField: e.target.value }, () =>
+                console.log(this.state.searchField)
+              );
+            }}
+          />
+        </header>
+
+        {/* <CardsList monsters={this.state.monsters} num={this.state.num} /> */}
+        <CardsList monsters={filterMonsters} num={this.state.num} />
 
         <button
           className="square"
