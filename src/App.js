@@ -24,6 +24,12 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }));
   }
 
+  handleChangeFunction = (e) => {
+    this.setState({ searchField: e.target.value }, () =>
+      console.log(this.state.searchField)
+    );
+  };
+
   render() {
     /* const monsters = this.state.monsters;
     const searchField = this.state.searchField; */
@@ -40,31 +46,28 @@ class App extends Component {
         </h2>
 
         <header>
+          <button
+            className="square"
+            onClick={() => this.setState({ string: "big", num: 1.1 })}
+          >
+            change <strong>string</strong>
+          </button>{" "}
+          &nbsp;
+          <button
+            className="square"
+            onClick={() => this.setState({ num: this.state.num + 1 })}
+          >
+            change <strong>Num: {this.state.num}</strong>
+          </button>
+          &nbsp;&nbsp;
           <SearchBox
             placeholder="Search monsters"
-            handleChange={(e) => {
-              this.setState({ searchField: e.target.value }, () =>
-                console.log(this.state.searchField)
-              );
-            }}
+            handleChange={this.handleChangeFunction}
           />
         </header>
 
         {/* <CardsList monsters={this.state.monsters} num={this.state.num} /> */}
         <CardsList monsters={filterMonsters} num={this.state.num} />
-
-        <button
-          className="square"
-          onClick={() => this.setState({ string: "big", num: 1.1 })}
-        >
-          change <strong>string</strong>
-        </button>
-        <button
-          className="square"
-          onClick={() => this.setState({ num: this.state.num + 1 })}
-        >
-          change <strong>Num: {this.state.num}</strong>
-        </button>
       </div>
     );
   }

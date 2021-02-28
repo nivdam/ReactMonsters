@@ -17,5 +17,8 @@
     @media (min-width: 768px) {
       max-width: calc(100% / 3 );
     }
+    @media (min-width: 992px) {
+      max-width: calc(100% / 4 );
+    }
   }
 }
