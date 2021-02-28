@@ -24,7 +24,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <div className="container">
         <h2>
           {this.state.string} {this.state.num}
         </h2>
@@ -43,7 +43,7 @@ class App extends Component {
         >
           change <strong>Num: {this.state.num}</strong>
         </button>
-      </>
+      </div>
     );
   }
 }

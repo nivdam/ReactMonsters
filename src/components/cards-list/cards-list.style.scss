@@ -1,0 +1,21 @@
+.cards--list {
+  $space: 6px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  margin-left:  -$space;
+  margin-right: -$space;
+
+  .card--item {
+    width: 100%;
+    max-width: calc(100% / 2 );
+    flex: 1 0 calc(100% / 2 );
+    padding: $space;
+
+    @media (min-width: 768px) {
+      max-width: calc(100% / 3 );
+    }
+  }
+}

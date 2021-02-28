@@ -4,16 +4,21 @@ import "./card-item.style.scss";
 
 export const CardItem = (props) => {
   return (
-    <div>
-      <picture className="image--content">
-        {/* {fetch("https://jsonplaceholder.typicode.com/photos/" + monster.id)
+    <div className="card--item">
+      <div className="card">
+        <picture className="image--content">
+          <img
+            src={`https://robohash.org/${props.monster.id}?set=set1`}
+            alt={`Robot nom-${props.monster.id}`}
+          />
+          {/* {fetch("https://jsonplaceholder.typicode.com/photos/" + monster.id)
               .then((response) => response.json())
               .then((imgUrl) => iamge.url)} */}
-        <img src="" alt="" />
-      </picture>
-      <h2>
-        {props.monster.name} {props.num}
-      </h2>
+        </picture>
+        <h2>
+          {props.monster.name} {props.num}
+        </h2>
+      </div>
     </div>
   );
 };
