@@ -7,15 +7,23 @@ export const CardsList = (props) => {
   // console.log(props);
 
   return (
-    <section className="cards--list">
-      {props.monsters.map((monster) => (
-        <CardItem
-          key={monster.id}
-          mansID={monster.id}
-          monster={monster}
-          num={props.num}
-        />
-      ))}
-    </section>
+    <main>
+      <header>
+        <h3>
+          <small>Shown:</small> {props.monsters.length}
+        </h3>
+      </header>
+
+      <section className="cards--list">
+        {props.monsters.map((monster) => (
+          <CardItem
+            key={monster.id}
+            mansID={monster.id}
+            monster={monster}
+            num={props.num}
+          />
+        ))}
+      </section>
+    </main>
   );
 };

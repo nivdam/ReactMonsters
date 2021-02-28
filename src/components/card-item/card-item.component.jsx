@@ -18,6 +18,12 @@ export const CardItem = (props) => {
         <h2>
           {props.monster.name} {props.num}
         </h2>
+        <p>
+          <address>
+            <small>City: {props.monster.address.city}</small>{" "}
+          </address>
+          {props.monster.email}
+        </p>
       </div>
     </div>
   );
