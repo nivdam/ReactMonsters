@@ -42,7 +42,7 @@ class App extends Component {
     return (
       <div className="container">
         <h2>
-          {this.state.string} {this.state.num}
+          React Monsters: {this.state.string} {this.state.num}
         </h2>
 
         <header>
